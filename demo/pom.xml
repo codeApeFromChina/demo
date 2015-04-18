@@ -7,5 +7,7 @@
   <modules>
   	<module>demo1</module>
   	<module>demo-spring-session</module>
+  	<module>demo-extjs</module>
+  	<module>ExtJsWebBase</module>
   </modules>
 </project>
