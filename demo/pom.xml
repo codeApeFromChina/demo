@@ -9,5 +9,11 @@
   	<module>demo-spring-session</module>
   	<module>demo-extjs</module>
   	<module>ExtJsWebBase</module>
+  	<module>demo-mq-camel</module>
+  	<module>demo-webservice</module>
+  	<module>demo-mockito</module>
+  	<module>demo-jedis</module>
+  	<module>demo-IDbMapper</module>
+  	<module>demo-DbMapper</module>
   </modules>
 </project>
