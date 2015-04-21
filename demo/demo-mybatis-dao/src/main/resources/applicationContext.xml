@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:cxf="http://cxf.apache.org/core"
+	xmlns:camel="http://camel.apache.org/schema/spring" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://cxf.apache.org/jaxws
+						http://cxf.apache.org/schemas/jaxws.xsd
+						http://cxf.apache.org/jaxrs
+						http://cxf.apache.org/schemas/jaxrs.xsd
+						http://cxf.apache.org/core
+						http://cxf.apache.org/schemas/core.xsd
+					    http://camel.apache.org/schema/spring 
+					    http://camel.apache.org/schema/spring/camel-spring.xsd
+					    http://www.springframework.org/schema/context
+				        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+				        http://www.springframework.org/schema/tx
+				        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+				        http://www.springframework.org/schema/aop 
+				        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+
+	<!-- ***************************************************************************************** -->
+	<!-- 将多个配置文件位置放到列表中 -->
+	<bean id="propertyResources" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<value>classpath:jdbc_mysql.properties</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<!-- 将配置文件读取到容器中，交给Spring管理 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" ref="propertyResources" />
+	</bean>
+
+	<!-- ***************************************************************************************** -->
+
+	<!-- DIS数据库的数据源配置 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${jdbc.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${jdbc.url}</value>
+		</property>
+		<property name="username">
+			<value>${jdbc.username}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.password}</value>
+		</property>
+		<property name="initialSize">
+			<value>${jdbc.initialSize}</value>
+		</property>
+		<property name="maxActive">
+			<value>${jdbc.maxActive}</value>
+		</property>
+		<property name="maxIdle">
+			<value>${jdbc.maxIdle}</value>
+		</property>
+		<property name="minIdle">
+			<value>${jdbc.minIdle}</value>
+		</property>
+		<property name="timeBetweenEvictionRunsMillis">
+			<value>${jdbc.timeBetweenEvictionRunsMillis}</value>
+		</property>
+		<property name="testWhileIdle">
+			<value>${jdbc.testWhileIdle}</value>
+		</property>
+		<property name="validationQuery">
+			<value>${jdbc.validationQuery}</value>
+		</property>
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:MyBatis-Configuration.xml"></property>
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- ***************************************************************************************** -->
+	<!-- 数据库dao -->
+
+	<bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="cn.tj.fnzi.its.dao.UserMapper"></property>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<!-- ***************************************************************************************** -->
+	<!-- 数据库dao封装的webservice -->
+
+	<bean id="userService" class="cn.tj.fnzi.webservice.dao.UserDaoWebService">
+		<property name="dao" ref="userDao"></property>
+	</bean>
+
+
+
+
+	<!-- ***************************************************************************************** -->
+	<!-- 对外暴露的webservice服务 -->
+	<jaxws:endpoint id="userDataService" implementor="#userService"
+		address="/userDataServiceWS" />
+
+</beans>   

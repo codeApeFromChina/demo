@@ -32,6 +32,9 @@
 
 	<jaxws:client id="userDataService" serviceClass="cn.tj.fnzi.its.webservice.IUserService"
 		address="http://127.0.0.1:8080/demo-DbMapper/webservices/userDataServiceWS" />
+		
+	<jaxws:client id="userDaoWebService" serviceClass="cn.tj.fnzi.webservice.dao.IUserDaoWebService"
+        address="http://127.0.0.1:8080/demo-mybatis-dao/webservices/userDataServiceWS" />
 
 	<!-- ******************************************************************************************************* -->
 

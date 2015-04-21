@@ -15,5 +15,6 @@
   	<module>demo-jedis</module>
   	<module>demo-IDbMapper</module>
   	<module>demo-DbMapper</module>
+  	<module>demo-mybatis-dao</module>
   </modules>
 </project>
