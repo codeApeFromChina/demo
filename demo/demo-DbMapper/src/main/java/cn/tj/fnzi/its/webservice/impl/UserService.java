@@ -13,6 +13,7 @@ public class UserService implements IUserService {
 	}
 
 	public List<User> selectByExample(User record) {
+
 		return new ArrayList<User>();
 	}
 

@@ -1,0 +1,655 @@
+2015-04-21 12:30:21,897 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-21 12:30:21,916 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@b7b6ef, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@14b3a9e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1f5973b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@9bb1da, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1b993d6]
+2015-04-21 12:30:22,084 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2015-04-21 12:30:22,153 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2015-04-21 12:30:22,173 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+2015-04-21 12:30:22,190 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2015-04-21 12:30:22,216 INFO  [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@eafe8d: startup date [Tue Apr 21 12:30:22 CST 2015]; root of context hierarchy
+2015-04-21 12:30:22,327 INFO  [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc_h2.properties]
+2015-04-21 12:30:22,704 WARN  [org.apache.cxf.bus.spring.OldSpringSupport] - Import of META-INF/cxf/cxf-extension-soap.xml has been deprecated and is unnecessary.
+2015-04-21 12:30:22,706 ERROR [org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@14b3a9e] to prepare test instance [null(cn.tj.baseextweb.fw.entity.UserDaoTest)]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cn.tj.baseextweb.fw.entity.UserDaoTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.tj.baseextweb.fw.dao.GenericDao] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@javax.annotation.Resource(type=class java.lang.Object, mappedName=, shareable=true, lookup=, authenticationType=CONTAINER, description=, name=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:308)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:385)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:82)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:199)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:251)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:253)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.tj.baseextweb.fw.dao.GenericDao] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@javax.annotation.Resource(type=class java.lang.Object, mappedName=, shareable=true, lookup=, authenticationType=CONTAINER, description=, name=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1261)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1009)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:904)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:442)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:420)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:545)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:155)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:305)
+	... 26 more
+2015-04-21 12:30:22,725 ERROR [org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@14b3a9e] to prepare test instance [null(cn.tj.baseextweb.fw.entity.UserDaoTest)]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cn.tj.baseextweb.fw.entity.UserDaoTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.tj.baseextweb.fw.dao.GenericDao] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@javax.annotation.Resource(type=class java.lang.Object, mappedName=, shareable=true, lookup=, authenticationType=CONTAINER, description=, name=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:308)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:385)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:82)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:199)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:251)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:253)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.tj.baseextweb.fw.dao.GenericDao] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@javax.annotation.Resource(type=class java.lang.Object, mappedName=, shareable=true, lookup=, authenticationType=CONTAINER, description=, name=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1261)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1009)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:904)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:442)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:420)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:545)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:155)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:305)
+	... 26 more
+2015-04-21 12:30:22,727 ERROR [org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@14b3a9e] to prepare test instance [null(cn.tj.baseextweb.fw.entity.UserDaoTest)]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cn.tj.baseextweb.fw.entity.UserDaoTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.tj.baseextweb.fw.dao.GenericDao] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@javax.annotation.Resource(type=class java.lang.Object, mappedName=, shareable=true, lookup=, authenticationType=CONTAINER, description=, name=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:308)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:385)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:82)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:199)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:251)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:253)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.tj.baseextweb.fw.dao.GenericDao] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@javax.annotation.Resource(type=class java.lang.Object, mappedName=, shareable=true, lookup=, authenticationType=CONTAINER, description=, name=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1261)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1009)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:904)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:442)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:420)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:545)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:155)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:305)
+	... 26 more
+2015-04-21 12:30:22,729 ERROR [org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@14b3a9e] to prepare test instance [null(cn.tj.baseextweb.fw.entity.UserDaoTest)]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cn.tj.baseextweb.fw.entity.UserDaoTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.tj.baseextweb.fw.dao.GenericDao] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@javax.annotation.Resource(type=class java.lang.Object, mappedName=, shareable=true, lookup=, authenticationType=CONTAINER, description=, name=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:308)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:385)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:82)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:199)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:251)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:253)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.tj.baseextweb.fw.dao.GenericDao] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@javax.annotation.Resource(type=class java.lang.Object, mappedName=, shareable=true, lookup=, authenticationType=CONTAINER, description=, name=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1261)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1009)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:904)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:442)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:420)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:545)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:155)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:305)
+	... 26 more
+2015-04-21 12:30:22,735 INFO  [org.springframework.context.support.GenericApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@eafe8d: startup date [Tue Apr 21 12:30:22 CST 2015]; root of context hierarchy
+2015-04-21 13:05:43,861 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-21 13:05:43,886 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1655659, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@81f03, org.springframework.test.context.support.DirtiesContextTestExecutionListener@12c20d9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@20c09b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@450448]
+2015-04-21 13:05:43,982 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2015-04-21 13:05:44,091 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2015-04-21 13:05:44,110 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+2015-04-21 13:05:44,126 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2015-04-21 13:05:44,295 INFO  [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@1e1ccbc: startup date [Tue Apr 21 13:05:44 CST 2015]; root of context hierarchy
+2015-04-21 13:05:44,428 INFO  [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc_h2.properties]
+2015-04-21 13:05:44,947 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2015-04-21 13:05:44,962 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.2.19.Final}
+2015-04-21 13:05:44,964 INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-04-21 13:05:44,968 INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-04-21 13:05:45,335 WARN  [org.springframework.context.support.GenericApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: org/logicalcobwebs/cglib/core/NamingPolicy
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:706)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:260)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:63)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:83)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:74)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:116)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:82)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:199)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:251)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:253)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.lang.NoClassDefFoundError: org/logicalcobwebs/cglib/core/NamingPolicy
+	at org.logicalcobwebs.proxool.ConnectionPool.getConnection(ConnectionPool.java:261)
+	at org.logicalcobwebs.proxool.ProxoolDataSource.getConnection(ProxoolDataSource.java:97)
+	at org.hibernate.service.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:141)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcServicesImpl.java:242)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:117)
+	at org.hibernate.service.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:85)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:184)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:156)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1827)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1785)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1870)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:363)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:453)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:438)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1564)
+	... 40 more
+Caused by: java.lang.ClassNotFoundException: org.logicalcobwebs.cglib.core.NamingPolicy
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 56 more
+2015-04-21 13:05:45,344 ERROR [org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@81f03] to prepare test instance [null(cn.tj.baseextweb.fw.entity.UserDaoTest)]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:91)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:74)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:116)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:82)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:199)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:251)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:253)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: org/logicalcobwebs/cglib/core/NamingPolicy
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:706)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:260)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:63)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:83)
+	... 25 more
+Caused by: java.lang.NoClassDefFoundError: org/logicalcobwebs/cglib/core/NamingPolicy
+	at org.logicalcobwebs.proxool.ConnectionPool.getConnection(ConnectionPool.java:261)
+	at org.logicalcobwebs.proxool.ProxoolDataSource.getConnection(ProxoolDataSource.java:97)
+	at org.hibernate.service.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:141)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcServicesImpl.java:242)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:117)
+	at org.hibernate.service.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:85)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:184)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:156)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1827)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1785)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1870)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:363)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:453)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:438)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1564)
+	... 40 more
+Caused by: java.lang.ClassNotFoundException: org.logicalcobwebs.cglib.core.NamingPolicy
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 56 more
+2015-04-21 13:05:45,356 INFO  [org.logicalcobwebs.proxool.springDbPool] - Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2015-04-21 13:05:45,356 INFO  [org.logicalcobwebs.proxool.ConnectionPool] - Waiting until Tue Apr 21 13:05:45 CST 2015 for all connections to become inactive (active count is 1).
+2015-04-21 13:05:45,356 WARN  [org.logicalcobwebs.proxool.ConnectionPool] - Shutdown waited for 0 milliseconds for all the connections to become inactive but the active count is still 1. Shutting down anyway.
+2015-04-21 13:05:45,361 INFO  [org.logicalcobwebs.proxool.PrototyperController] - Stopping Prototyper thread
+2015-04-21 13:05:45,361 INFO  [org.logicalcobwebs.proxool.HouseKeeperController] - Stopping HouseKeeper thread
+2015-04-21 13:17:18,389 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-21 13:17:18,405 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1abe751, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@df8508, org.springframework.test.context.support.DirtiesContextTestExecutionListener@96ea4f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1f12248, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1c7d1]
+2015-04-21 13:17:18,487 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2015-04-21 13:17:18,646 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2015-04-21 13:17:18,674 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+2015-04-21 13:17:18,700 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2015-04-21 13:17:18,806 INFO  [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@10277cd: startup date [Tue Apr 21 13:17:18 CST 2015]; root of context hierarchy
+2015-04-21 13:17:19,021 INFO  [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc_h2.properties]
+2015-04-21 13:17:19,421 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2015-04-21 13:17:19,425 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.2.19.Final}
+2015-04-21 13:17:19,427 INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-04-21 13:17:19,428 INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-04-21 13:17:20,108 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2015-04-21 13:17:20,506 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-04-21 13:17:20,546 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-04-21 13:17:21,286 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-04-21 13:17:21,286 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2015-04-21 13:17:21,304 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2015-04-21 13:17:21,310 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: ref_role_function
+2015-04-21 13:17:21,312 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_function
+2015-04-21 13:17:21,314 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_role
+2015-04-21 13:17:21,318 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_user
+2015-04-21 13:17:21,319 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: ref_role_function
+2015-04-21 13:17:21,320 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_function
+2015-04-21 13:17:21,321 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_role
+2015-04-21 13:17:21,322 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_user
+2015-04-21 13:17:21,322 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: ref_role_function
+2015-04-21 13:17:21,323 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_function
+2015-04-21 13:17:21,324 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_role
+2015-04-21 13:17:21,325 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_user
+2015-04-21 13:17:21,358 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000232: Schema update complete
+2015-04-21 13:17:21,399 INFO  [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.logicalcobwebs.proxool.ProxoolDataSource@120932f] of Hibernate SessionFactory for HibernateTransactionManager
+2015-04-21 13:17:21,543 WARN  [org.apache.cxf.bus.spring.OldSpringSupport] - Import of META-INF/cxf/cxf-extension-soap.xml has been deprecated and is unnecessary.
+2015-04-21 13:17:21,682 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@16a7f71 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test002@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@d5008d testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@17319d]; rollback [false]
+2015-04-21 13:17:21,928 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 66.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:17:21,929 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 85.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:17:22,150 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@16a7f71 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test002@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@d5008d testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:17:22,157 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@16a7f71 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test003@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@d5008d testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@17319d]; rollback [false]
+2015-04-21 13:17:22,236 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@16a7f71 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test003@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@d5008d testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:17:22,240 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@16a7f71 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test004@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@d5008d testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@17319d]; rollback [false]
+2015-04-21 13:17:22,244 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@16a7f71 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test004@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@d5008d testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:17:22,248 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@16a7f71 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@d5008d testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@17319d]; rollback [false]
+2015-04-21 13:17:22,263 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@16a7f71 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [cn.tj.baseextweb.fw.entity.User#1], mergedContextConfiguration = [MergedContextConfiguration@d5008d testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:17:22,272 INFO  [org.springframework.context.support.GenericApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@10277cd: startup date [Tue Apr 21 13:17:18 CST 2015]; root of context hierarchy
+2015-04-21 13:17:22,272 INFO  [org.logicalcobwebs.proxool.springDbPool] - Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2015-04-21 13:17:22,273 INFO  [org.logicalcobwebs.proxool.PrototyperController] - Stopping Prototyper thread
+2015-04-21 13:17:22,273 INFO  [org.logicalcobwebs.proxool.HouseKeeperController] - Stopping HouseKeeper thread
+2015-04-21 13:18:46,227 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-21 13:18:46,310 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@20c09b, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@450448, org.springframework.test.context.support.DirtiesContextTestExecutionListener@11c227e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1ca1a4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1b833ca]
+2015-04-21 13:18:46,415 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2015-04-21 13:18:46,508 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2015-04-21 13:18:46,530 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+2015-04-21 13:18:46,548 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2015-04-21 13:18:46,702 INFO  [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@18ca7cb: startup date [Tue Apr 21 13:18:46 CST 2015]; root of context hierarchy
+2015-04-21 13:18:46,811 INFO  [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc_h2.properties]
+2015-04-21 13:18:47,215 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2015-04-21 13:18:47,221 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.2.19.Final}
+2015-04-21 13:18:47,226 INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-04-21 13:18:47,228 INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-04-21 13:18:47,899 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2015-04-21 13:18:48,043 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-04-21 13:18:48,048 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-04-21 13:18:48,413 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-04-21 13:18:48,414 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2015-04-21 13:18:48,443 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2015-04-21 13:18:48,461 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.REF_ROLE_FUNCTION
+2015-04-21 13:18:48,461 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [fid, rfid, rid]
+2015-04-21 13:18:48,461 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_32bl6av3fmkmafshu43eylek4, fk_dctjn6cam1f4kmthgegpxnkua]
+2015-04-21 13:18:48,461 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [fk_dctjn6cam1f4kmthgegpxnkua_index_5, primary_key_5, fk_32bl6av3fmkmafshu43eylek4_index_5]
+2015-04-21 13:18:48,469 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.TAB_FUNCTION
+2015-04-21 13:18:48,470 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [fid, forder, level, pid, furl, fname]
+2015-04-21 13:18:48,470 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_7s8wc3smh6y00v7ryndsk45p]
+2015-04-21 13:18:48,470 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary_key_d, fk_7s8wc3smh6y00v7ryndsk45p_index_d]
+2015-04-21 13:18:48,475 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.TAB_ROLE
+2015-04-21 13:18:48,475 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [endtime, starttime, rid, rname]
+2015-04-21 13:18:48,476 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: []
+2015-04-21 13:18:48,476 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary_key_f]
+2015-04-21 13:18:48,481 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.TAB_USER
+2015-04-21 13:18:48,481 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [endtime, uid, username, starttime, rid, password]
+2015-04-21 13:18:48,482 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_t3pvigtad7pmlvc2ub3p1i5dr]
+2015-04-21 13:18:48,482 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary_key_fa, fk_t3pvigtad7pmlvc2ub3p1i5dr_index_f]
+2015-04-21 13:18:48,484 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000232: Schema update complete
+2015-04-21 13:18:48,520 INFO  [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.logicalcobwebs.proxool.ProxoolDataSource@15b7aee] of Hibernate SessionFactory for HibernateTransactionManager
+2015-04-21 13:18:48,688 WARN  [org.apache.cxf.bus.spring.OldSpringSupport] - Import of META-INF/cxf/cxf-extension-soap.xml has been deprecated and is unnecessary.
+2015-04-21 13:18:48,758 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@856758 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@43c9da testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@79347b]; rollback [false]
+2015-04-21 13:18:48,944 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 66.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:18:48,946 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 85.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:18:49,077 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@856758 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [cn.tj.baseextweb.fw.entity.User#1], mergedContextConfiguration = [MergedContextConfiguration@43c9da testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:18:49,081 INFO  [org.springframework.context.support.GenericApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@18ca7cb: startup date [Tue Apr 21 13:18:46 CST 2015]; root of context hierarchy
+2015-04-21 13:18:49,084 INFO  [org.logicalcobwebs.proxool.springDbPool] - Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2015-04-21 13:18:49,085 INFO  [org.logicalcobwebs.proxool.PrototyperController] - Stopping Prototyper thread
+2015-04-21 13:18:49,085 INFO  [org.logicalcobwebs.proxool.HouseKeeperController] - Stopping HouseKeeper thread
+2015-04-21 13:22:10,560 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-21 13:22:10,579 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@20c09b, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@450448, org.springframework.test.context.support.DirtiesContextTestExecutionListener@11c227e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1ca1a4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1b833ca]
+2015-04-21 13:22:10,683 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2015-04-21 13:22:10,773 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2015-04-21 13:22:10,794 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+2015-04-21 13:22:10,811 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2015-04-21 13:22:10,919 INFO  [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@18ca7cb: startup date [Tue Apr 21 13:22:10 CST 2015]; root of context hierarchy
+2015-04-21 13:22:11,018 INFO  [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc_h2.properties]
+2015-04-21 13:22:11,599 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2015-04-21 13:22:11,607 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.2.19.Final}
+2015-04-21 13:22:11,613 INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-04-21 13:22:11,615 INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-04-21 13:22:12,156 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2015-04-21 13:22:12,307 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-04-21 13:22:12,312 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-04-21 13:22:12,614 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-04-21 13:22:12,614 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2015-04-21 13:22:12,635 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2015-04-21 13:22:12,653 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.REF_ROLE_FUNCTION
+2015-04-21 13:22:12,654 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [fid, rfid, rid]
+2015-04-21 13:22:12,654 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_32bl6av3fmkmafshu43eylek4, fk_dctjn6cam1f4kmthgegpxnkua]
+2015-04-21 13:22:12,654 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [fk_dctjn6cam1f4kmthgegpxnkua_index_5, primary_key_5, fk_32bl6av3fmkmafshu43eylek4_index_5]
+2015-04-21 13:22:12,661 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.TAB_FUNCTION
+2015-04-21 13:22:12,661 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [fid, forder, level, pid, furl, fname]
+2015-04-21 13:22:12,661 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_7s8wc3smh6y00v7ryndsk45p]
+2015-04-21 13:22:12,661 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary_key_d, fk_7s8wc3smh6y00v7ryndsk45p_index_d]
+2015-04-21 13:22:12,665 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.TAB_ROLE
+2015-04-21 13:22:12,665 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [endtime, starttime, rid, rname]
+2015-04-21 13:22:12,665 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: []
+2015-04-21 13:22:12,665 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary_key_f]
+2015-04-21 13:22:12,669 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.TAB_USER
+2015-04-21 13:22:12,669 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [endtime, uid, username, starttime, rid, password]
+2015-04-21 13:22:12,669 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_t3pvigtad7pmlvc2ub3p1i5dr]
+2015-04-21 13:22:12,669 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary_key_fa, fk_t3pvigtad7pmlvc2ub3p1i5dr_index_f]
+2015-04-21 13:22:12,672 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000232: Schema update complete
+2015-04-21 13:22:12,708 INFO  [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.logicalcobwebs.proxool.ProxoolDataSource@13a7ecf] of Hibernate SessionFactory for HibernateTransactionManager
+2015-04-21 13:22:12,827 WARN  [org.apache.cxf.bus.spring.OldSpringSupport] - Import of META-INF/cxf/cxf-extension-soap.xml has been deprecated and is unnecessary.
+2015-04-21 13:22:12,880 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@1cc60b9 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e2305a testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@1d4997b]; rollback [false]
+2015-04-21 13:22:13,039 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 66.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:22:13,040 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 85.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:22:13,165 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@1cc60b9 testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [cn.tj.baseextweb.fw.entity.User#1], mergedContextConfiguration = [MergedContextConfiguration@e2305a testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:22:13,180 INFO  [org.springframework.context.support.GenericApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@18ca7cb: startup date [Tue Apr 21 13:22:10 CST 2015]; root of context hierarchy
+2015-04-21 13:22:13,193 INFO  [org.logicalcobwebs.proxool.springDbPool] - Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2015-04-21 13:22:13,194 INFO  [org.logicalcobwebs.proxool.PrototyperController] - Stopping Prototyper thread
+2015-04-21 13:22:13,194 INFO  [org.logicalcobwebs.proxool.HouseKeeperController] - Stopping HouseKeeper thread
+2015-04-21 13:23:07,824 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-21 13:23:07,843 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@12c20d9, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@20c09b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@450448, org.springframework.test.context.transaction.TransactionalTestExecutionListener@11c227e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1ca1a4]
+2015-04-21 13:23:07,931 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2015-04-21 13:23:08,047 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2015-04-21 13:23:08,067 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+2015-04-21 13:23:08,083 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2015-04-21 13:23:08,192 INFO  [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@1ef63f9: startup date [Tue Apr 21 13:23:08 CST 2015]; root of context hierarchy
+2015-04-21 13:23:08,292 INFO  [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc_h2.properties]
+2015-04-21 13:23:08,680 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2015-04-21 13:23:08,686 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.2.19.Final}
+2015-04-21 13:23:08,690 INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-04-21 13:23:08,691 INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-04-21 13:23:09,200 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2015-04-21 13:23:09,345 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-04-21 13:23:09,350 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-04-21 13:23:09,679 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-04-21 13:23:09,679 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2015-04-21 13:23:09,706 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2015-04-21 13:23:09,723 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.REF_ROLE_FUNCTION
+2015-04-21 13:23:09,723 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [fid, rfid, rid]
+2015-04-21 13:23:09,723 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_32bl6av3fmkmafshu43eylek4, fk_dctjn6cam1f4kmthgegpxnkua]
+2015-04-21 13:23:09,723 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [fk_dctjn6cam1f4kmthgegpxnkua_index_5, primary_key_5, fk_32bl6av3fmkmafshu43eylek4_index_5]
+2015-04-21 13:23:09,732 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.TAB_FUNCTION
+2015-04-21 13:23:09,733 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [fid, forder, level, pid, furl, fname]
+2015-04-21 13:23:09,733 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_7s8wc3smh6y00v7ryndsk45p]
+2015-04-21 13:23:09,733 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary_key_d, fk_7s8wc3smh6y00v7ryndsk45p_index_d]
+2015-04-21 13:23:09,738 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.TAB_ROLE
+2015-04-21 13:23:09,738 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [endtime, starttime, rid, rname]
+2015-04-21 13:23:09,738 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: []
+2015-04-21 13:23:09,738 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary_key_f]
+2015-04-21 13:23:09,749 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: DB.PUBLIC.TAB_USER
+2015-04-21 13:23:09,750 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [endtime, uid, username, starttime, rid, password]
+2015-04-21 13:23:09,750 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_t3pvigtad7pmlvc2ub3p1i5dr]
+2015-04-21 13:23:09,750 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary_key_fa, fk_t3pvigtad7pmlvc2ub3p1i5dr_index_f]
+2015-04-21 13:23:09,751 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000232: Schema update complete
+2015-04-21 13:23:09,784 INFO  [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.logicalcobwebs.proxool.ProxoolDataSource@1552dfc] of Hibernate SessionFactory for HibernateTransactionManager
+2015-04-21 13:23:09,945 WARN  [org.apache.cxf.bus.spring.OldSpringSupport] - Import of META-INF/cxf/cxf-extension-soap.xml has been deprecated and is unnecessary.
+2015-04-21 13:23:10,026 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@a8604e testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@4abadd testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@322a4c]; rollback [false]
+2015-04-21 13:23:10,191 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 66.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:23:10,193 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 85.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:23:10,315 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@a8604e testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [cn.tj.baseextweb.fw.entity.User#1], mergedContextConfiguration = [MergedContextConfiguration@4abadd testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:23:10,322 INFO  [org.springframework.context.support.GenericApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@1ef63f9: startup date [Tue Apr 21 13:23:08 CST 2015]; root of context hierarchy
+2015-04-21 13:23:10,324 INFO  [org.logicalcobwebs.proxool.springDbPool] - Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2015-04-21 13:23:10,327 INFO  [org.logicalcobwebs.proxool.PrototyperController] - Stopping Prototyper thread
+2015-04-21 13:23:10,327 INFO  [org.logicalcobwebs.proxool.HouseKeeperController] - Stopping HouseKeeper thread
+2015-04-21 13:25:40,392 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-21 13:25:40,411 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@12c20d9, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@20c09b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@450448, org.springframework.test.context.transaction.TransactionalTestExecutionListener@11c227e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1ca1a4]
+2015-04-21 13:25:40,500 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2015-04-21 13:25:40,588 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2015-04-21 13:25:40,611 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+2015-04-21 13:25:40,629 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2015-04-21 13:25:40,743 INFO  [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@1ef63f9: startup date [Tue Apr 21 13:25:40 CST 2015]; root of context hierarchy
+2015-04-21 13:25:40,845 INFO  [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc_mysql.properties]
+2015-04-21 13:25:41,223 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2015-04-21 13:25:41,229 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.2.19.Final}
+2015-04-21 13:25:41,233 INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-04-21 13:25:41,235 INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-04-21 13:25:43,189 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2015-04-21 13:25:43,413 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-04-21 13:25:43,417 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-04-21 13:25:43,716 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-04-21 13:25:43,716 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2015-04-21 13:25:43,735 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2015-04-21 13:25:43,751 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: ref_role_function
+2015-04-21 13:25:43,753 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_function
+2015-04-21 13:25:43,754 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_role
+2015-04-21 13:25:43,755 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_user
+2015-04-21 13:25:43,756 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: ref_role_function
+2015-04-21 13:25:43,757 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_function
+2015-04-21 13:25:43,758 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_role
+2015-04-21 13:25:43,759 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_user
+2015-04-21 13:25:43,760 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: ref_role_function
+2015-04-21 13:25:43,760 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_function
+2015-04-21 13:25:43,761 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_role
+2015-04-21 13:25:43,762 INFO  [java.sql.DatabaseMetaData] - HHH000262: Table not found: tab_user
+2015-04-21 13:25:45,913 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000232: Schema update complete
+2015-04-21 13:25:45,941 INFO  [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.logicalcobwebs.proxool.ProxoolDataSource@1a06d64] of Hibernate SessionFactory for HibernateTransactionManager
+2015-04-21 13:25:46,049 WARN  [org.apache.cxf.bus.spring.OldSpringSupport] - Import of META-INF/cxf/cxf-extension-soap.xml has been deprecated and is unnecessary.
+2015-04-21 13:25:46,102 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@135d7ad testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1e2b711 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@160fa94]; rollback [false]
+2015-04-21 13:25:46,265 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 66.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:25:46,266 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 85.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:25:46,487 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@135d7ad testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1e2b711 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:25:46,490 INFO  [org.springframework.context.support.GenericApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@1ef63f9: startup date [Tue Apr 21 13:25:40 CST 2015]; root of context hierarchy
+2015-04-21 13:25:46,490 INFO  [org.logicalcobwebs.proxool.springDbPool] - Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2015-04-21 13:25:46,493 INFO  [org.logicalcobwebs.proxool.PrototyperController] - Stopping Prototyper thread
+2015-04-21 13:25:46,493 INFO  [org.logicalcobwebs.proxool.HouseKeeperController] - Stopping HouseKeeper thread
+2015-04-21 13:26:50,272 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-21 13:26:50,290 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@14b3a9e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1f5973b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9bb1da, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1b993d6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@990402]
+2015-04-21 13:26:50,376 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2015-04-21 13:26:50,473 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2015-04-21 13:26:50,492 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+2015-04-21 13:26:50,508 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2015-04-21 13:26:50,616 INFO  [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@1ee026e: startup date [Tue Apr 21 13:26:50 CST 2015]; root of context hierarchy
+2015-04-21 13:26:50,721 INFO  [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc_mysql.properties]
+2015-04-21 13:26:51,337 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2015-04-21 13:26:51,342 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.2.19.Final}
+2015-04-21 13:26:51,346 INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-04-21 13:26:51,347 INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-04-21 13:26:52,289 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2015-04-21 13:26:52,444 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-04-21 13:26:52,449 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-04-21 13:26:52,757 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-04-21 13:26:52,757 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2015-04-21 13:26:52,779 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2015-04-21 13:26:52,821 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: test.ref_role_function
+2015-04-21 13:26:52,822 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [fid, rfid, rid]
+2015-04-21 13:26:52,822 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_32bl6av3fmkmafshu43eylek4, fk_dctjn6cam1f4kmthgegpxnkua]
+2015-04-21 13:26:52,822 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [fk_32bl6av3fmkmafshu43eylek4, primary, fk_dctjn6cam1f4kmthgegpxnkua]
+2015-04-21 13:26:52,860 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: test.tab_function
+2015-04-21 13:26:52,860 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [fid, forder, level, pid, furl, fname]
+2015-04-21 13:26:52,860 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_7s8wc3smh6y00v7ryndsk45p]
+2015-04-21 13:26:52,860 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary, fk_7s8wc3smh6y00v7ryndsk45p]
+2015-04-21 13:26:52,870 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: test.tab_role
+2015-04-21 13:26:52,870 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [endtime, starttime, rid, rname]
+2015-04-21 13:26:52,870 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: []
+2015-04-21 13:26:52,870 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary]
+2015-04-21 13:26:52,880 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: test.tab_user
+2015-04-21 13:26:52,880 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [endtime, uid, username, starttime, rid, password]
+2015-04-21 13:26:52,880 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_t3pvigtad7pmlvc2ub3p1i5dr]
+2015-04-21 13:26:52,881 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [fk_t3pvigtad7pmlvc2ub3p1i5dr, primary]
+2015-04-21 13:26:52,881 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000232: Schema update complete
+2015-04-21 13:26:52,909 INFO  [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.logicalcobwebs.proxool.ProxoolDataSource@1fb5b8d] of Hibernate SessionFactory for HibernateTransactionManager
+2015-04-21 13:26:53,023 WARN  [org.apache.cxf.bus.spring.OldSpringSupport] - Import of META-INF/cxf/cxf-extension-soap.xml has been deprecated and is unnecessary.
+2015-04-21 13:26:53,141 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@f972db testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e3c2d5 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@10c5a84]; rollback [false]
+2015-04-21 13:26:53,262 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 66.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:26:53,263 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 85.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:26:53,472 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@f972db testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [cn.tj.baseextweb.fw.entity.User#1], mergedContextConfiguration = [MergedContextConfiguration@e3c2d5 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:26:53,477 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@f972db testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test002@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e3c2d5 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@10c5a84]; rollback [false]
+2015-04-21 13:26:53,514 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@f972db testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test002@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e3c2d5 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:26:53,518 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@f972db testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test003@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e3c2d5 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@10c5a84]; rollback [false]
+2015-04-21 13:26:53,554 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@f972db testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test003@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e3c2d5 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:26:53,558 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@f972db testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test004@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e3c2d5 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@10c5a84]; rollback [false]
+2015-04-21 13:26:53,563 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@f972db testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test004@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e3c2d5 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:26:53,565 INFO  [org.logicalcobwebs.proxool.springDbPool] - Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2015-04-21 13:26:53,565 INFO  [org.springframework.context.support.GenericApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@1ee026e: startup date [Tue Apr 21 13:26:50 CST 2015]; root of context hierarchy
+2015-04-21 13:26:53,568 INFO  [org.logicalcobwebs.proxool.PrototyperController] - Stopping Prototyper thread
+2015-04-21 13:26:53,568 INFO  [org.logicalcobwebs.proxool.HouseKeeperController] - Stopping HouseKeeper thread
+2015-04-21 13:27:29,230 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-21 13:27:29,247 INFO  [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@14b3a9e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1f5973b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9bb1da, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1b993d6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@990402]
+2015-04-21 13:27:29,338 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2015-04-21 13:27:29,426 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2015-04-21 13:27:29,446 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+2015-04-21 13:27:29,463 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2015-04-21 13:27:29,576 INFO  [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@1ee026e: startup date [Tue Apr 21 13:27:29 CST 2015]; root of context hierarchy
+2015-04-21 13:27:29,684 INFO  [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] - Loading properties file from class path resource [jdbc_mysql.properties]
+2015-04-21 13:27:30,057 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2015-04-21 13:27:30,062 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.2.19.Final}
+2015-04-21 13:27:30,068 INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-04-21 13:27:30,069 INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-04-21 13:27:30,956 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2015-04-21 13:27:31,100 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-04-21 13:27:31,104 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-04-21 13:27:31,409 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-04-21 13:27:31,410 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2015-04-21 13:27:31,432 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2015-04-21 13:27:31,451 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: test.ref_role_function
+2015-04-21 13:27:31,451 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [fid, rfid, rid]
+2015-04-21 13:27:31,452 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_32bl6av3fmkmafshu43eylek4, fk_dctjn6cam1f4kmthgegpxnkua]
+2015-04-21 13:27:31,452 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [fk_32bl6av3fmkmafshu43eylek4, primary, fk_dctjn6cam1f4kmthgegpxnkua]
+2015-04-21 13:27:31,461 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: test.tab_function
+2015-04-21 13:27:31,461 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [fid, forder, level, pid, furl, fname]
+2015-04-21 13:27:31,461 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_7s8wc3smh6y00v7ryndsk45p]
+2015-04-21 13:27:31,461 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary, fk_7s8wc3smh6y00v7ryndsk45p]
+2015-04-21 13:27:31,470 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: test.tab_role
+2015-04-21 13:27:31,470 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [endtime, starttime, rid, rname]
+2015-04-21 13:27:31,470 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: []
+2015-04-21 13:27:31,470 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [primary]
+2015-04-21 13:27:31,479 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000261: Table found: test.tab_user
+2015-04-21 13:27:31,479 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000037: Columns: [endtime, uid, username, starttime, rid, password]
+2015-04-21 13:27:31,479 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000108: Foreign keys: [fk_t3pvigtad7pmlvc2ub3p1i5dr]
+2015-04-21 13:27:31,479 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] - HHH000126: Indexes: [fk_t3pvigtad7pmlvc2ub3p1i5dr, primary]
+2015-04-21 13:27:31,480 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000232: Schema update complete
+2015-04-21 13:27:31,509 INFO  [org.springframework.orm.hibernate4.HibernateTransactionManager] - Using DataSource [org.logicalcobwebs.proxool.ProxoolDataSource@1f80a46] of Hibernate SessionFactory for HibernateTransactionManager
+2015-04-21 13:27:31,619 WARN  [org.apache.cxf.bus.spring.OldSpringSupport] - Import of META-INF/cxf/cxf-extension-soap.xml has been deprecated and is unnecessary.
+2015-04-21 13:27:31,726 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@fef26d testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1de1237 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@7dfcb6]; rollback [false]
+2015-04-21 13:27:31,836 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 66.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:27:31,837 WARN  [org.hibernate.hql.internal.ast.HqlSqlWalker] - [DEPRECATION] Encountered positional parameter near line 1, column 85.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-04-21 13:27:31,998 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@fef26d testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test001@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1de1237 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:27:32,002 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@fef26d testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test002@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1de1237 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@7dfcb6]; rollback [false]
+2015-04-21 13:27:32,039 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@fef26d testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test002@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1de1237 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:27:32,042 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@fef26d testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test003@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1de1237 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@7dfcb6]; rollback [false]
+2015-04-21 13:27:32,071 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@fef26d testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test003@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1de1237 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:27:32,078 INFO  [org.springframework.test.context.transaction.TransactionContext] - Began transaction (1) for test context [DefaultTestContext@fef26d testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test004@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1de1237 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@7dfcb6]; rollback [false]
+2015-04-21 13:27:32,082 INFO  [org.springframework.test.context.transaction.TransactionContext] - Committed transaction for test context [DefaultTestContext@fef26d testClass = UserDaoTest, testInstance = null(cn.tj.baseextweb.fw.entity.UserDaoTest), testMethod = test004@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1de1237 testClass = UserDaoTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-04-21 13:27:32,083 INFO  [org.logicalcobwebs.proxool.springDbPool] - Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2015-04-21 13:27:32,083 INFO  [org.springframework.context.support.GenericApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@1ee026e: startup date [Tue Apr 21 13:27:29 CST 2015]; root of context hierarchy
+2015-04-21 13:27:32,086 INFO  [org.logicalcobwebs.proxool.PrototyperController] - Stopping Prototyper thread
+2015-04-21 13:27:32,086 INFO  [org.logicalcobwebs.proxool.HouseKeeperController] - Stopping HouseKeeper thread

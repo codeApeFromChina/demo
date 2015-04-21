@@ -25,6 +25,21 @@
 	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
+	<context:component-scan base-package="cn.tj"
+		use-default-filters="false">
+		<context:include-filter type="regex"
+			expression=".service.*" />
+		<context:include-filter type="regex"
+			expression=".common.*" />
+		<context:include-filter type="regex"
+			expression=".dao.*" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Component" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Repository" />
+	</context:component-scan>
 
 	<!-- ***************************************************************************************** -->
 	<!-- 将多个配置文件位置放到列表中 -->
@@ -42,12 +57,117 @@
 		<property name="locations" ref="propertyResources" />
 	</bean>
 
+
+	<bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+		<property name="driver" value="${jdbc.driverClassName}"></property>
+		<property name="driverUrl" value="${jdbc.url}"></property>
+		<property name="user" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="minimumConnectionCount" value="${min}"></property>
+		<property name="maximumConnectionCount" value="${max}"></property>
+		<property name="alias">
+			<value>springDbPool</value>
+		</property>
+		<property name="prototypeCount">
+			<value>10</value>
+		</property>
+		<property name="maximumActiveTime">
+			<value>10000</value>
+		</property>
+		<property name="trace">
+			<value>false</value>
+		</property>
+		<property name="verbose">
+			<value>false</value>
+		</property>
+		<property name="testBeforeUse">
+			<value>true</value>
+		</property>
+		<property name="testAfterUse">
+			<value>true</value>
+		</property>
+		<property name="houseKeepingTestSql">
+			<value>select now()</value>
+		</property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<!-- prop key="hibernate.current_session_context_class">thread</prop> -->
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="packagesToScan" value="cn.tj.baseextweb.fw.entity" />
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="genericDao" class="cn.tj.baseextweb.fw.dao.GenericDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<tx:advice id="transactionInterceptor">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="add*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="create*" propagation="REQUIRED"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="insert*" propagation="REQUIRED"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="update*" propagation="REQUIRED"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="merge*" propagation="REQUIRED"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="del*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="remove*" propagation="REQUIRED"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="put*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="use*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+
+			<tx:method name="get*" propagation="REQUIRED" read-only="true"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="count*" propagation="REQUIRED" read-only="true"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="find*" propagation="REQUIRED" read-only="true"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="list*" propagation="REQUIRED" read-only="true"
+				rollback-for="java.lang.Exception" />
+
+			<tx:method name="call*" propagation="REQUIRED" read-only="true"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="*" read-only="true" rollback-for="java.lang.Exception" />
+		</tx:attributes>
+	</tx:advice>
+
+	<bean
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="proxyTargetClass" value="true" />
+		<property name="beanNames">
+			<list>
+				<value>*Service</value>
+				<value>*Dao</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+	</bean>
+
 	<bean id="userService" class="cn.tj.fnzi.its.webservice.impl.UserService">
 	</bean>
 
-	<!-- ***************************************************************************************** -->
-	<!-- 对外暴露的webservice服务 -->
 	<jaxws:endpoint id="userDataService" implementor="#userService"
 		address="/userDataServiceWS" />
-
 </beans>
