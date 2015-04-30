@@ -11,7 +11,7 @@ import cn.tj.fnzi.its.model.User;
 public interface IUserService {
 
 	@WebMethod
-	int insert(User record);
+	void insert(User record);
 
 	@WebMethod
 	List<User> selectByExample(User record);

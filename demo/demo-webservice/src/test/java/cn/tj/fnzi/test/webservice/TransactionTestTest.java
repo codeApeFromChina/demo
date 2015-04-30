@@ -6,21 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import cn.tj.fnzi.its.webservice.IUserService;
-	
+import cn.tj.fnzi.TransactionTest;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:applicationContext.xml" })
-public class UserDataServiceTest {
+public class TransactionTestTest {
 
 	@Autowired
-	IUserService service;
+	TransactionTest transactionTest;
 
 	@Test
 	public void test001() {
-		cn.tj.fnzi.its.model.User record = new cn.tj.fnzi.its.model.User();
-		record.setUsername("fnzi");
-		record.setPassword("123");
-		service.insert(record);
+		transactionTest.throwException();
 	}
-
 }

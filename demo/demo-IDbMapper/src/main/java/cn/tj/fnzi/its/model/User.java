@@ -1,41 +1,49 @@
 package cn.tj.fnzi.its.model;
 
 public class User {
-	private String uid;
-	private String uname;
-	private String uage;
+	private Long uid;
+	private String endTime;
+	private String password;
+	private String startTime;
+	private String username;
 
-	public String getUid() {
+	public Long getUid() {
 		return uid;
 	}
 
-	public void setUid(String uid) {
+	public void setUid(Long uid) {
 		this.uid = uid;
 	}
 
-	public String getUname() {
-		return uname;
+	public String getEndTime() {
+		return endTime;
 	}
 
-	public void setUname(String uname) {
-		this.uname = uname;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
-	public String getUage() {
-		return uage;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setUage(String uage) {
-		this.uage = uage;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getUsex() {
-		return usex;
+	public String getStartTime() {
+		return startTime;
 	}
 
-	public void setUsex(String usex) {
-		this.usex = usex;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
-	private String usex;
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 }
