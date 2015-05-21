@@ -10,12 +10,21 @@
 	<import resource="classpath:applicationContext-jms.xml" />
 	
 	<bean id="camelHandler" class="cn.tj.fnzi.CamelHandler"></bean>
+	<bean id="tempCamelHandler" class="cn.tj.fnzi.TempCamelHandler"></bean>
 
 	<camelContext xmlns="http://camel.apache.org/schema/spring">
 		<route>
 			<from uri="jms:queue:req" />
 			<to uri="log:msg?level=info" />
-			<to uri="jms:queue:resp" />
+			<to uri="bean:camelHandler?method=handler" />
 		</route>
+		
+		<route>
+            <from uri="direct-vm:continue" />
+            <to uri="bean:tempCamelHandler?method=handler" />
+            <to uri="freemarker:templates/template.ftl" />
+            <to uri="log:msg?level=info" />
+            <to uri="jms:queue:resp" />
+        </route>    
 	</camelContext>
 </beans>

@@ -12,7 +12,7 @@ import org.dom4j.DocumentException;
 import org.dom4j.io.SAXReader;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class CamelHandler {
+public class TempCamelHandler {
 
 	@Autowired
 	ProducerTemplate camelTemplate;
@@ -22,21 +22,5 @@ public class CamelHandler {
 		SAXReader saxReader = new SAXReader();
 		Document document = null;
 
-		try {
-			document = saxReader.read(new ByteArrayInputStream(exchange.getIn()
-					.getBody().toString().getBytes("UTF-8")));
-
-		} catch (DocumentException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-
-		String enb = document.selectSingleNode("//R/BD/ENB").getText();
-
-		Map<String, String> ret = new HashMap<String, String>();
-		ret.put("enb", enb);
-
-		camelTemplate.sendBody("direct-vm:continue", ret);
 	}
 }
