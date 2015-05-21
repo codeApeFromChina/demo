@@ -16,5 +16,6 @@
   	<module>demo-IDbMapper</module>
   	<module>demo-DbMapper</module>
   	<module>demo-mybatis-dao</module>
+  	<module>jmeter-mq</module>
   </modules>
 </project>
