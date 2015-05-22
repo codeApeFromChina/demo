@@ -18,5 +18,6 @@
   	<module>demo-mybatis-dao</module>
   	<module>jmeter-mq</module>
   	<module>demo-api</module>
+  	<module>demo-modules</module>
   </modules>
 </project>
