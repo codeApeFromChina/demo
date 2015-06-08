@@ -7,6 +7,9 @@
         <dependent-module archiveName="demo-m-site-web-user-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/demo-m-site-web-user/demo-m-site-web-user">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="demo-m-site-web-auth-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/demo-m-site-web-auth/demo-m-site-web-auth">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="demo-m-site-web"/>
         <property name="java-output-path" value="/demo-m-site-web/target/classes"/>
     </wb-module>
