@@ -19,5 +19,6 @@
   	<module>jmeter-mq</module>
   	<module>demo-api</module>
   	<module>demo-modules</module>
+  	<module>demo-zookeeper</module>
   </modules>
 </project>
