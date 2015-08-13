@@ -25,4 +25,5 @@
 		<property name="connectionFactory" ref="connectionFactory" />
 	</bean>
 
+<bean id="redisSerializer" class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
 </beans>
